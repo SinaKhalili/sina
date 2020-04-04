@@ -7,10 +7,11 @@ URLS=(
 
 RANDOM_URL=${URLS[$(( $RANDOM % ${#URLS[@]} + 1 ))]}
 
-if [[ -v BROWSER ]]; then
-	$BROWSER $RANDOM_URL
-else
-	firefox $RANDOM_URL || chrome $RANDOM_URL
-fi
+sina () {
 
-
+	if [[ -v BROWSER ]]; then
+		$BROWSER $RANDOM_URL
+	else
+		firefox $RANDOM_URL || chrome $RANDOM_URL
+	fi
+}
